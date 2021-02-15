@@ -10,8 +10,7 @@ import Combine
 import SDWebImageSwiftUI
 
 
-struct ContentView: View {
-    
+struct ContentView: View {    
     @StateObject private var viewModel = ViewModel()
     @State private var showGrid = false
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
@@ -27,6 +26,7 @@ struct ContentView: View {
                 .toolbar(content: {
                     ToolbarItemGroup(placement: .navigationBarTrailing) {
                         
+                        // Toogle button for
                         // change to grid only for iPhone
                         if horizontalSizeClass == .compact {
                             Button(action: {changeList()}, label: {
@@ -36,6 +36,9 @@ struct ContentView: View {
                     }
                 })
             }
+        }
+        .onAppear {
+            viewModel.fetch()
         }
     }
     

@@ -7,8 +7,7 @@
 
 import SwiftUI
 
-struct MainLazyGrid: View {
-    
+struct MainLazyGrid: View {    
     var characters: [Results]
     @Binding var showGrid: Bool
     
@@ -24,6 +23,8 @@ struct MainLazyGrid: View {
             ],
             spacing: 16,
             content: {
+                
+                // List of characters
                 ForEach(characters, id: \.name) { character in
                     NavigationLink(
                         destination: CharacterDetail(character: character),

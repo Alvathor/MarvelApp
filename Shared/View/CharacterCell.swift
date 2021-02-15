@@ -14,12 +14,16 @@ struct CharacterCell: View {
     
     var body: some View {
         ZStack {
+            
+            // Character image
             WebImage(url:
                         URL(string: "\(character.thumbnail?.path ?? "").\(character.thumbnail?.pathExtension ?? "")")
             )
             .resizable()
             .aspectRatio(contentMode: .fill)
             .clipShape(RoundedRectangle(cornerRadius: 25.0, style: .continuous), style: FillStyle())
+            
+            // Character Name
             VStack {
                 Spacer()
                 Text("\(character.name ?? "")")
