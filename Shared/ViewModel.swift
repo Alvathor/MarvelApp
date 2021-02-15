@@ -21,11 +21,7 @@ class ViewModel: ObservableObject {
             DispatchQueue.main.async {
                 self.characters = result.data?.results ?? []
             }
-            
-            
         }.resume()
-            
-    }
-    
+    }    
 }
 
